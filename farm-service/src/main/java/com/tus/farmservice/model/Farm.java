@@ -20,13 +20,23 @@ public class Farm {
     private Long farmId;
     private String farmName;
     private String location;
+    private double area;
+    private Long ownerId;
+    private int farmSize;
+
+    // @OneToMany(mappedBy = "farm")
+    // private List<Crop> crops;
 
     // Constructors, getters, and setters
     public Farm() {}
 
-    public Farm(String farmName, String location) {
+    public Farm(String farmName, String location, double area, Long ownerId, int farmSize) {
         this.farmName = farmName;
         this.location = location;
+        this.area = area;
+        this.ownerId = ownerId;
+        this.farmSize = farmSize;
+        // this.crops = crops;
     }
 
     public Long getFarmId() {
@@ -52,4 +62,35 @@ public class Farm {
     public void setLocation(String location) {
         this.location = location;
     }
+    public double getArea() {
+        return area;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
+    }
+
+    public Long getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public int getSize() {
+        return farmSize;
+    }
+
+    public void setSize(int size) {
+        this.farmSize = size;
+    }
+
+    // public List<Crop> getCrops() {
+    //     return crops;
+    // }
+
+    // public void setCrops(List<Crop> crops) {
+    //     this.crops = crops;
+    // }
 }
